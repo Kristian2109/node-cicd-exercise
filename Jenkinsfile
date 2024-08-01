@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    new_image_name=kristian2109/cicd:${git rev-parse HEAD}
+                    new_image_name=kristian2109/cicd:$(git rev-parse HEAD)
                     docker build -t ${new_image_name} .
                     docker push ${new_image_name}
                     docker rmi ${new_image_name}
