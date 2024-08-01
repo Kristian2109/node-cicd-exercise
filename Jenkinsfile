@@ -5,12 +5,12 @@ pipeline {
     }
 
     stages {
-        stage('Build adn Run') {
+        stage('Build and Test') {
             steps {
                 script {
                     sh '''
                     npm install
-                    node app.js
+                    npm test
                     '''
                 }
             }
@@ -28,5 +28,7 @@ pipeline {
                 }
             }
         }
+
+        stage
     }
 }
