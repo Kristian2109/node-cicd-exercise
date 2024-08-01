@@ -9,6 +9,7 @@ pipeline {
             steps {
                 script {
                     sh '''
+                    set -x
                     npm install
                     npm test
                     '''
