@@ -8,7 +8,10 @@ pipeline {
         stage('Build adn Run') {
             steps {
                 script {
-                    sh 'npm install & node app.js'
+                    sh '''
+                    npm install
+                    node app.js
+                    '''
                 }
             }
         }
